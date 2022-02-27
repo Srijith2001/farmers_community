@@ -4,7 +4,7 @@ import android.net.Uri;
 
 public class Post {
     private int mImageResource;
-    private Uri mNewImage;
+    private String mNewImage;
     private String mCategory;
     private String mQuestion;
     private String mUserName;
@@ -39,7 +39,7 @@ public class Post {
         return noAnswers;
     }
 
-    public Uri getNewImage() {
+    public String getNewImage() {
         return mNewImage;
     }
 }

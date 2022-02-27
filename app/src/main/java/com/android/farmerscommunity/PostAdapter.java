@@ -1,5 +1,8 @@
 package com.android.farmerscommunity;
 
+import android.app.Activity;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,8 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.graphics.PathUtils;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
@@ -49,8 +54,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
         if(currentPost.getNewImage()==null)
             holder.mImageView.setImageResource(currentPost.getImageResource());
-        else
-            holder.mImageView.setImageURI(currentPost.getNewImage());
+        else {
+            holder.mImageView.setImageURI(Uri.parse(currentPost.getNewImage()));
+        }
         holder.mCategoryView.setText(currentPost.getCategory());
         holder.mQuestionView.setText(currentPost.getQuestion());
         holder.mUserNameView.setText("Posted by " + currentPost.getUserName()+" on 24-Oct-2021");
