@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.gson.Gson;
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         Log.d("This class","I am a working button");
                         imageChooser();
+                        imageSelect.setVisibility(View.INVISIBLE);
                     }
                 });
                 alertDialog.setView(v);
